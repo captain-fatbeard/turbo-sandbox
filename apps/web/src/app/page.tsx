@@ -6,7 +6,7 @@ export default function Page() {
       <div className="text-center">
         <div>
           <Input />
-          <Button variant="default">Search</Button>
+          <Button variant="secondary">Search</Button>
         </div>
       </div>
     </div>
