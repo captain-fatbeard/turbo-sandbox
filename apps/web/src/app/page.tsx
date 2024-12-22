@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <div className="h-full flex items-center justify-center flex-col">
       <div className="text-center mb-10">
-        <SearchBar inputPlaceholder="Search..." buttonText="Search" buttonAction={useAiSearch().search} />
+        <SearchBar buttonAction={useAiSearch().search} />
       </div>
 
       <div className="">
