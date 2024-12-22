@@ -8,14 +8,14 @@ export default function Page() {
   const [result] = useUIState()
 
   return (
-    <div className="h-full flex items-center justify-center flex-col">
-      <div className="text-center mb-10">
+    <div className="h-full flex items-center justify-center flex-col ">
+      <div className="text-center mb-10 w-full max-w-md">
         <SearchBar buttonAction={useAiSearch().search} />
       </div>
 
-      <div className="">
+      <div className="w-full max-w-md">
         {result.map((message: any, index: number) => (
-          <div key={index} className="text-center">
+          <div key={index} className="break-words	mb-6">
             {message.display}
           </div>
         ))}
