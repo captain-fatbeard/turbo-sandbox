@@ -9,7 +9,7 @@ export const continueConversation = async (message: CoreMessage) => {
 
   try {
     const result = await streamUI({
-      model: openai('gpt-3.5-turbo'),
+      model: openai('gpt-4o-mini'),
       messages: [message],
       text: ({ content }) => {
         return content
