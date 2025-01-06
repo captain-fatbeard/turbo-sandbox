@@ -1,27 +1,11 @@
 module.exports = {
   disableEmoji: true,
   format: '{type}{scope}: {emoji}{subject}',
-  list: [
-    'test',
-    'feat',
-    'fix',
-    'chore',
-    'docs',
-    'refactor',
-    'style',
-    'ci',
-    'perf',
-    'config',
-  ],
+  list: ['test', 'feat', 'fix', 'chore', 'docs', 'refactor', 'style', 'ci', 'perf', 'config'],
   maxMessageLength: 75,
   minMessageLength: 3,
   questions: ['type', 'scope', 'subject'], // removed 'body', 'breaking', 'issues', 'lerna'
-  scopes: [
-    'repo',
-    'app-web',
-    'package-ui',
-    'tests',
-  ],
+  scopes: ['repo', 'app-ai-search', 'package-ui', 'tests'],
   types: {
     config: {
       description: 'Configuration changes',
