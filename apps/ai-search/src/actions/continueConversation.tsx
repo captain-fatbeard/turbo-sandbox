@@ -14,23 +14,21 @@ export const continueConversation = async (message: CoreMessage) => {
       messages: [
         {
           role: 'system',
-          content: 'you speak extremely concisely and only respond with lists, add location and date of sighting',
+          content: `You speak danglish.`,
         },
         message,
       ],
-      text: ({ content }) => {
-        return content
-      },
+      text: ({ content }) => content,
       tools: {
-        getRichUFOsighting: {
-          parameters: z.object({
-            listOfUFOsighting: z.array(z.string()).describe('A list of UFO sightings'),
-          }),
-          description: 'When a user asks for UI, use this tool',
-          generate: async function* ({ listOfUFOsighting }) {
-            return listOfUFOsighting.map((ufo) => <li>{ufo}</li>)
-          },
-        },
+        // awesomeTool: {
+        // parameters: z.object({
+        //   [serachKey]: z.string().describe('What this promts should display',
+        // }),
+        // description: 'when a user asks for [serachKey], use this tool',
+        // generate: async () => {
+        //   return <Component />
+        // },
+        // },
       },
     })
 
