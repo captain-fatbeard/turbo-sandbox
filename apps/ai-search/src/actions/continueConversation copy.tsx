@@ -4,6 +4,7 @@ import { openai } from '@ai-sdk/openai'
 import { CoreMessage } from 'ai'
 import { streamUI } from 'ai/rsc'
 import { z } from 'zod'
+import React from 'react'
 import Prices from '../components/prices'
 
 export const continueConversation = async (message: CoreMessage) => {
@@ -15,20 +16,18 @@ export const continueConversation = async (message: CoreMessage) => {
       messages: [
         {
           role: 'system',
-          content: `you write like donald trump would speak. repond if posible as a list`,
+          content: `You write like Donald Trump would speech.`,
         },
         message,
       ],
       text: ({ content }) => content,
       tools: {
-        awesomeTool: {
+        getPricesCompoenent: {
           parameters: z.object({
-            prices: z.string().describe('This show a list of prices'),
+            prices: z.string().describe('The prices component to display.'),
           }),
-          description: 'when a user asks for prifdfces, use this tool',
-          generate: async (test) => {
-            console.log('test', test)
-
+          description: 'when a user asks for prices, use this tool',
+          generate: async () => {
             return <Prices />
           },
         },
